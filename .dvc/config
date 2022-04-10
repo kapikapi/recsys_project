@@ -1,0 +1,4 @@
+['remote "myremote"']
+    url = gdrive://1GiqBZiMfK980AZineYku0z-IDtf7GL8j
+['remote "my_gdrive_remote"']
+    url = gdrive://1hdb_PSFUQorpyg5V2SQRztr6H9OYJJtn

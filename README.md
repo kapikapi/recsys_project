@@ -1,7 +1,27 @@
 # recsys_project
-RecSys project for productization task
+RecSys project: flask
 
-Files with users and products representations can be found here (did not fit to github)
-https://drive.google.com/drive/folders/1v_O-wQ_PPZkGL8P_DF-7JNokX0GcoWUG?usp=sharing
+Install requirements:
+```commandline
+pip install requirements.txt
+pip install requirements-dev.txt
+```
 
-You should download them and add to `static\data` folder.
+To obtain data:
+```
+dvc init
+dvc pull -r my_gdrive_remote
+```
+
+Build docker image and run:
+```commandline
+docker build -t <IMAGE_NAME> .
+docker run -p 5000:5000 -v <ABSOLUTE_PATH_LOCAL>:/app/res <IMAGE_NAME>
+```
+where <ABSOLUTE_PATH_LOCAL> is an absolute path to folder on your machine that will contain result.txt file for batch predictions.
+
+Go to 
+```commandline
+http://127.0.0.1:5000
+```
+to get predictions.

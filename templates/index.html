@@ -9,6 +9,7 @@
 
 <body>
     <h1>Best Recommender</h1>
+    <h2>Recommendation per user</h2>
     <form method="post">
         <div class="form-group">
             <label for="title">User Id</label>
@@ -40,6 +41,23 @@
             <span class='error-msg'>No such user</span>
         </div>
         {% endif %}
+    </form>
+    <h2>Batch recommendations for random set of users</h2>
+    <form action="{{ url_for('generate_batch') }}" method="get">
+        <div class="form-group">
+            <label for="title">Number of users in batch</label>
+            <input type="number" name="users_batch_num" placeholder="Number of users in batch" class="form-control"
+                value="{{ request.form['users_batch_num'] }}"/>
+        </div>
+        <div class="form-group">
+            <label for="title">Number of recommendations</label>
+            <input type="number" name="num_recs_batch" placeholder="Number of recommendations" class="form-control"
+                value="{{ request.form['num_recs_batch'] }}"></input>
+        </div>
+
+        <div class="form-group submit-button">
+            <button type="submit"  class="btn btn-dark">Generate and save predictions</button>
+        </div>
     </form>
 </body>
 </html>

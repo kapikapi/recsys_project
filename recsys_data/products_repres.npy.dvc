@@ -1,0 +1,4 @@
+outs:
+- md5: 3e48f0d028a14e50987a6e9d4f2db030
+  size: 198752128
+  path: products_repres.npy
